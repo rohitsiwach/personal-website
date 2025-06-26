@@ -250,6 +250,7 @@ code {
   font-weight: 800;
   letter-spacing: -0.025em;
   line-height: 1.2;
+  color: #001f4d !important;
 }
 
 .hero-content p {
@@ -271,7 +272,7 @@ code {
   text-align: center;
   font-size: clamp(2rem, 4vw, 3rem);
   margin-bottom: 4rem;
-  color: #2d3748;
+  color: #001f4d !important;
   font-weight: 700;
   letter-spacing: -0.025em;
   position: relative;
@@ -326,7 +327,7 @@ code {
 }
 
 .card h3 {
-  color: #4facfe;
+  color: #001f4d !important;
   margin-bottom: 1.25rem;
   font-size: 1.5rem;
   font-weight: 600;

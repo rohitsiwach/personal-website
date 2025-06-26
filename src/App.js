@@ -154,6 +154,7 @@ function App() {
         <Navigation />
         <Routes>
           <Route path="/" element={<Homepage />} />
+          <Route path="/personal-website" element={<Homepage />} />
           <Route path="/education-career" element={<EducationCareer />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/ideas-projects" element={<IdeasProjects />} />
