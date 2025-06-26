@@ -1,6 +1,44 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Homepage() {
+  const [showMenuHint, setShowMenuHint] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check initial screen size
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkScreenSize();
+    
+    // Add event listener for window resize
+    window.addEventListener('resize', checkScreenSize);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
+  useEffect(() => {
+    // Only show hint on mobile screens
+    if (!isMobile) return;
+    
+    const timer = setTimeout(() => {
+      setShowMenuHint(true);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [isMobile]);
+
+  const handleMenuHintClick = () => {
+    setShowMenuHint(false);
+    // Trigger the burger menu by dispatching a custom event
+    const burgerMenu = document.querySelector('.burger-menu');
+    if (burgerMenu) {
+      burgerMenu.click();
+    }
+  };
+
   return (
     <div>
       {/* Hero Section */}
@@ -45,7 +83,7 @@ function Homepage() {
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginTop: '1rem' }}>
               <div>
-                <h4 style={{ color: '#4facfe', marginBottom: '0.5rem' }}>🎨 Frontend Development</h4>
+                <h4 style={{ color: '#000814', marginBottom: '0.5rem' }}>🎨 Frontend Development</h4>
                 <ul style={{ marginLeft: '1.5rem' }}>
                   <li>React.js & Next.js (Expert)</li>
                   <li>TypeScript & JavaScript</li>
@@ -55,7 +93,7 @@ function Homepage() {
                 </ul>
               </div>
               <div>
-                <h4 style={{ color: '#4facfe', marginBottom: '0.5rem' }}>⚙️ Backend & Database</h4>
+                <h4 style={{ color: '#000814', marginBottom: '0.5rem' }}>⚙️ Backend & Database</h4>
                 <ul style={{ marginLeft: '1.5rem' }}>
                   <li>Node.js & Express.js</li>
                   <li>PHP & Laravel</li>
@@ -65,7 +103,7 @@ function Homepage() {
                 </ul>
               </div>
               <div>
-                <h4 style={{ color: '#4facfe', marginBottom: '0.5rem' }}>🛠️ DevOps & Infrastructure</h4>
+                <h4 style={{ color: '#000814', marginBottom: '0.5rem' }}>🛠️ DevOps & Infrastructure</h4>
                 <ul style={{ marginLeft: '1.5rem' }}>
                   <li>Docker & Kubernetes</li>
                   <li>AWS & Cloud Services</li>
@@ -90,28 +128,6 @@ function Homepage() {
               <li><strong>Business Acumen:</strong> Understanding business requirements and translating them into technical solutions</li>
             </ul>
           </div>
-
-          <div className="card">
-            <h3>🏆 Key Achievements</h3>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginTop: '1rem' }}>
-              <div style={{ textAlign: 'center', padding: '1rem', backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
-                <h4 style={{ color: '#4facfe', marginBottom: '0.5rem' }}>10,000+</h4>
-                <p>Active Users</p>
-              </div>
-              <div style={{ textAlign: 'center', padding: '1rem', backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
-                <h4 style={{ color: '#4facfe', marginBottom: '0.5rem' }}>80%</h4>
-                <p>Efficiency Improvement</p>
-              </div>
-              <div style={{ textAlign: 'center', padding: '1rem', backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
-                <h4 style={{ color: '#4facfe', marginBottom: '0.5rem' }}>15+</h4>
-                <p>Projects Delivered</p>
-              </div>
-              <div style={{ textAlign: 'center', padding: '1rem', backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
-                <h4 style={{ color: '#4facfe', marginBottom: '0.5rem' }}>6+</h4>
-                <p>Years Experience</p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -127,23 +143,23 @@ function Homepage() {
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1rem', marginTop: '1rem' }}>
               <div>
-                <h4 style={{ color: '#4facfe', marginBottom: '0.5rem' }}>📧 Email</h4>
+                <h4 style={{ color: '#000814', marginBottom: '0.5rem' }}>📧 Email</h4>
                 <p><a href="mailto:rohitsiwachroit@gmail.com" style={{ color: '#4facfe', textDecoration: 'none' }}>rohitsiwachroit@gmail.com</a></p>
               </div>
               <div>
-                <h4 style={{ color: '#4facfe', marginBottom: '0.5rem' }}>📱 Phone</h4>
+                <h4 style={{ color: '#000814', marginBottom: '0.5rem' }}>📱 Phone</h4>
                 <p><a href="tel:+491707806646" style={{ color: '#4facfe', textDecoration: 'none' }}>+49 170 780 6646</a></p>
               </div>
               <div>
-                <h4 style={{ color: '#4facfe', marginBottom: '0.5rem' }}>📍 Location</h4>
+                <h4 style={{ color: '#000814', marginBottom: '0.5rem' }}>📍 Location</h4>
                 <p>Munich, 81379, Germany</p>
               </div>
               <div>
-                <h4 style={{ color: '#4facfe', marginBottom: '0.5rem' }}>💼 LinkedIn</h4>
+                <h4 style={{ color: '#000814', marginBottom: '0.5rem' }}>💼 LinkedIn</h4>
                 <p><a href="https://www.linkedin.com/in/rohitsiwach/" target="_blank" rel="noopener noreferrer" style={{ color: '#4facfe', textDecoration: 'none' }}>linkedin.com/in/rohitsiwach</a></p>
               </div>
               <div>
-                <h4 style={{ color: '#4facfe', marginBottom: '0.5rem' }}>🐙 GitHub</h4>
+                <h4 style={{ color: '#000814', marginBottom: '0.5rem' }}>🐙 GitHub</h4>
                 <p><a href="https://github.com/rohitsiwach" target="_blank" rel="noopener noreferrer" style={{ color: '#4facfe', textDecoration: 'none' }}>github.com/rohitsiwach</a></p>
               </div>
             </div>
@@ -153,6 +169,36 @@ function Homepage() {
           </div>
         </div>
       </section>
+
+      {/* Menu Hint Animation */}
+      {showMenuHint && isMobile && (
+        <div 
+          style={{
+            position: 'fixed',
+            bottom: '20px',
+            right: '20px',
+            backgroundColor: 'rgba(79, 172, 254, 0.9)',
+            color: 'white',
+            padding: '12px 16px',
+            borderRadius: '25px',
+            boxShadow: '0 4px 20px rgba(79, 172, 254, 0.3)',
+            zIndex: 1000,
+            animation: 'menuHintPulse 2s ease-in-out infinite',
+            cursor: 'pointer',
+            fontSize: '14px',
+            fontWeight: '500',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            backdropFilter: 'blur(10px)',
+            border: '1px solid rgba(255, 255, 255, 0.2)'
+          }}
+          onClick={handleMenuHintClick}
+        >
+          <span>☰</span>
+          <span>Explore Menu</span>
+        </div>
+      )}
     </div>
   );
 }

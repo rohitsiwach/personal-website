@@ -182,28 +182,6 @@ function EducationCareer() {
               <li><strong>Network Security:</strong> Infrastructure security and performance optimization</li>
             </ul>
           </div>
-
-          <div className="card">
-            <h3>🏆 Key Achievements & Impact</h3>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginTop: '1rem' }}>
-              <div style={{ textAlign: 'center', padding: '1rem', backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
-                <h4 style={{ color: '#4facfe', marginBottom: '0.5rem' }}>10,000+</h4>
-                <p>Users Served</p>
-              </div>
-              <div style={{ textAlign: 'center', padding: '1rem', backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
-                <h4 style={{ color: '#4facfe', marginBottom: '0.5rem' }}>80%</h4>
-                <p>Efficiency Gain</p>
-              </div>
-              <div style={{ textAlign: 'center', padding: '1rem', backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
-                <h4 style={{ color: '#4facfe', marginBottom: '0.5rem' }}>99.9%</h4>
-                <p>System Uptime</p>
-              </div>
-              <div style={{ textAlign: 'center', padding: '1rem', backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
-                <h4 style={{ color: '#4facfe', marginBottom: '0.5rem' }}>15+</h4>
-                <p>Projects Delivered</p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
     </div>
