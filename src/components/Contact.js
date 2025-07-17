@@ -18,17 +18,52 @@ function Contact() {
             <form className="contact-form">
               <div style={{ marginBottom: '1rem' }}>
                 <label htmlFor="name">Name</label><br />
-                <input type="text" id="name" name="name" placeholder="Your Name" required style={{ width: '100%', padding: '0.5rem', borderRadius: '5px', border: '1px solid #ccc' }} />
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your Name"
+                  required
+                  style={{ width: '100%', padding: '0.5rem', borderRadius: '5px', border: '1px solid #ccc' }}
+                />
               </div>
               <div style={{ marginBottom: '1rem' }}>
                 <label htmlFor="email">Email</label><br />
-                <input type="email" id="email" name="email" placeholder="Your Email" required style={{ width: '100%', padding: '0.5rem', borderRadius: '5px', border: '1px solid #ccc' }} />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Your Email"
+                  required
+                  style={{ width: '100%', padding: '0.5rem', borderRadius: '5px', border: '1px solid #ccc' }}
+                />
               </div>
               <div style={{ marginBottom: '1rem' }}>
                 <label htmlFor="message">Message</label><br />
-                <textarea id="message" name="message" placeholder="Your Message" rows="5" required style={{ width: '100%', padding: '0.5rem', borderRadius: '5px', border: '1px solid #ccc' }} />
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Your Message"
+                  rows="5"
+                  required
+                  style={{ width: '100%', padding: '0.5rem', borderRadius: '5px', border: '1px solid #ccc' }}
+                />
               </div>
-              <button type="submit" style={{ background: 'linear-gradient(135deg, #667eea 0%, #4facfe 100%)', color: 'white', padding: '0.75rem 2rem', border: 'none', borderRadius: '5px', fontWeight: 'bold', cursor: 'pointer' }}>Send</button>
+              <button
+                type="submit"
+                style={{
+                  background: 'linear-gradient(135deg, #667eea 0%, #4facfe 100%)',
+                  color: 'white',
+                  padding: '0.75rem 2rem',
+                  border: 'none',
+                  borderRadius: '5px',
+                  fontWeight: 'bold',
+                  cursor: 'pointer'
+                }}
+                disabled
+              >
+                Send Message
+              </button>
             </form>
           </div>
           <div className="card" style={{ marginTop: '2rem' }}>
