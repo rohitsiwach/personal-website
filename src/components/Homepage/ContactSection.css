@@ -1,0 +1,26 @@
+.contact-section {
+  background-color: #f1f3f4;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.contact-item h4 {
+  color: #000814;
+  margin-bottom: 0.5rem;
+}
+
+.contact-link {
+  color: #4facfe;
+  text-decoration: none;
+}
+
+.contact-quote {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #666;
+} 

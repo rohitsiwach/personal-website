@@ -5,6 +5,20 @@ import EducationCareer from './components/EducationCareer';
 import Gallery from './components/Gallery';
 import IdeasProjects from './components/IdeasProjects';
 import Contact from './components/Contact';
+import JSReactConcepts from './components/JSReactConcepts';
+// Import detail pages
+import VariablesScope from './components/JSReactConcepts/DetailPages/VariablesScope';
+import FunctionsExecution from './components/JSReactConcepts/DetailPages/FunctionsExecution';
+import ObjectsPrototypes from './components/JSReactConcepts/DetailPages/ObjectsPrototypes';
+import ES6Features from './components/JSReactConcepts/DetailPages/ES6Features';
+import AsyncProgramming from './components/JSReactConcepts/DetailPages/AsyncProgramming';
+import FunctionalProgramming from './components/JSReactConcepts/DetailPages/FunctionalProgramming';
+import ComponentsJSX from './components/JSReactConcepts/DetailPages/ComponentsJSX';
+import StateLifecycle from './components/JSReactConcepts/DetailPages/StateLifecycle';
+import EventHandling from './components/JSReactConcepts/DetailPages/EventHandling';
+import HooksCustomHooks from './components/JSReactConcepts/DetailPages/HooksCustomHooks';
+import ContextStateManagement from './components/JSReactConcepts/DetailPages/ContextStateManagement';
+import PerformanceOptimization from './components/JSReactConcepts/DetailPages/PerformanceOptimization';
 import './App.css';
 
 function Navigation() {
@@ -59,10 +73,10 @@ function Navigation() {
             </li>
             <li>
               <Link 
-                to="/gallery" 
-                className={`nav-link ${location.pathname === '/gallery' ? 'active' : ''}`}
+                to="/js-react-concepts" 
+                className={`nav-link ${location.pathname.startsWith('/js-react-concepts') ? 'active' : ''}`}
               >
-                Gallery
+                JS & React Concepts
               </Link>
             </li>
             <li>
@@ -75,6 +89,14 @@ function Navigation() {
             </li>
             <li>
               <Link 
+                to="/gallery" 
+                className={`nav-link ${location.pathname === '/gallery' ? 'active' : ''}`}
+              >
+                Gallery
+              </Link>
+            </li>
+            <li>
+              <Link 
                 to="/contact" 
                 className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}
               >
@@ -82,7 +104,8 @@ function Navigation() {
               </Link>
             </li>
           </ul>
-          <div className={`burger-menu ${isMobileMenuOpen ? 'active' : ''}`} onClick={toggleMobileMenu}>
+          
+          <div className="burger-menu" onClick={toggleMobileMenu}>
             <div className="burger-line"></div>
             <div className="burger-line"></div>
             <div className="burger-line"></div>
@@ -116,11 +139,11 @@ function Navigation() {
           </li>
           <li>
             <Link 
-              to="/gallery" 
-              className={`nav-link ${location.pathname === '/gallery' ? 'active' : ''}`}
+              to="/js-react-concepts" 
+              className={`nav-link ${location.pathname.startsWith('/js-react-concepts') ? 'active' : ''}`}
               onClick={closeMobileMenu}
             >
-              Gallery
+              JS & React Concepts
             </Link>
           </li>
           <li>
@@ -130,6 +153,15 @@ function Navigation() {
               onClick={closeMobileMenu}
             >
               Ideas & Projects
+            </Link>
+          </li>
+          <li>
+            <Link 
+              to="/gallery" 
+              className={`nav-link ${location.pathname === '/gallery' ? 'active' : ''}`}
+              onClick={closeMobileMenu}
+            >
+              Gallery
             </Link>
           </li>
           <li>
@@ -156,6 +188,20 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/personal-website" element={<Homepage />} />
           <Route path="/education-career" element={<EducationCareer />} />
+          <Route path="/js-react-concepts" element={<JSReactConcepts />} />
+          {/* Detail page routes */}
+          <Route path="/js-react-concepts/variables-scope" element={<VariablesScope />} />
+          <Route path="/js-react-concepts/functions-execution" element={<FunctionsExecution />} />
+          <Route path="/js-react-concepts/objects-prototypes" element={<ObjectsPrototypes />} />
+          <Route path="/js-react-concepts/es6-features" element={<ES6Features />} />
+          <Route path="/js-react-concepts/async-programming" element={<AsyncProgramming />} />
+          <Route path="/js-react-concepts/functional-programming" element={<FunctionalProgramming />} />
+          <Route path="/js-react-concepts/components-jsx" element={<ComponentsJSX />} />
+          <Route path="/js-react-concepts/state-lifecycle" element={<StateLifecycle />} />
+          <Route path="/js-react-concepts/event-handling" element={<EventHandling />} />
+          <Route path="/js-react-concepts/hooks-custom-hooks" element={<HooksCustomHooks />} />
+          <Route path="/js-react-concepts/context-state-management" element={<ContextStateManagement />} />
+          <Route path="/js-react-concepts/performance-optimization" element={<PerformanceOptimization />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/ideas-projects" element={<IdeasProjects />} />
           <Route path="/contact" element={<Contact />} />
